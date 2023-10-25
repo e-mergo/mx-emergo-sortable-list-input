@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget
+    id="emergo.sortablelistinput.SortableListInput"
+    pluginWidget="true"
+    needsEntityContext="true"
+    offlineCapable="true"
+    supportedPlatform="Web"
+    xmlns="http://www.mendix.com/widget/1.0/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd"
+>
+    <name>Sortable List Input</name>
+    <description>Mendix custom widget for using an input field that enables sorting values.</description>
+    <studioProCategory>Input elements</studioProCategory>
+    <icon />
+    <properties>
+        <propertyGroup caption="General">
+            <propertyGroup caption="Data source">
+                <property key="valueAttribute" type="attribute">
+                    <caption>Value attribute</caption>
+                    <description />
+                    <attributeTypes>
+                        <attributeType name="String" />
+                    </attributeTypes>
+                </property>
+                <property key="listSeparator" type="string" defaultValue="/">
+                    <caption>List separator</caption>
+                    <description
+                    >The character used for separating the sorted list values. Defaults to '/'.</description>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Interaction">
+                <property key="handleType" type="enumeration" defaultValue="itemWithHandle">
+                    <caption>Sorting handle</caption>
+                    <description>Select how the sorting interaction is provided to the user.</description>
+                    <enumerationValues>
+                        <enumerationValue key="itemWithoutHandle">Item without handle</enumerationValue>
+                        <enumerationValue key="itemWithHandle">Both item and handle</enumerationValue>
+                        <enumerationValue key="onlyHandle">Handle only</enumerationValue>
+                    </enumerationValues>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Label">
+                <systemProperty key="Label" />
+            </propertyGroup>
+            <propertyGroup caption="Editability">
+                <systemProperty key="Editability" />
+            </propertyGroup>
+            <propertyGroup caption="Visibility">
+                <systemProperty key="Visibility" />
+            </propertyGroup>
+            <propertyGroup caption="Events">
+                <property key="onChange" type="action">
+                    <caption>On change</caption>
+                    <description />
+                </property>
+            </propertyGroup>
+        </propertyGroup>
+        <propertyGroup caption="Sortable objects">
+            <propertyGroup caption="Sortable objects">
+                <property key="dataSource" type="datasource" isList="true">
+                    <caption>Data source</caption>
+                    <description />
+                </property>
+                <property key="displayValue" dataSource="dataSource" type="attribute">
+                    <caption>Label attribute</caption>
+                    <description />
+                    <attributeTypes>
+                        <attributeType name="String" />
+                    </attributeTypes>
+                </property>
+                <property key="sortValue" dataSource="dataSource" type="attribute" required="false">
+                    <caption>Value attribute</caption>
+                    <description
+                    >The value of the sortable items that will be saved in the sorted list. Defaults to the 'Label attribute'.</description>
+                    <attributeTypes>
+                        <attributeType name="String" />
+                        <attributeType name="AutoNumber" />
+                        <attributeType name="Decimal" />
+                        <attributeType name="Enum" />
+                        <attributeType name="Integer" />
+                        <attributeType name="Long" />
+                    </attributeTypes>
+                </property>
+                <property key="randomizeObjectsType" type="enumeration" defaultValue="static">
+                    <caption>Randomize objects</caption>
+                    <description />
+                    <enumerationValues>
+                        <enumerationValue key="static">Static</enumerationValue>
+                        <enumerationValue key="attribute">Attribute</enumerationValue>
+                        <enumerationValue key="expression">Expression</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="randomizeObjectsStatic" type="boolean" defaultValue="false">
+                    <caption>&#160;</caption>
+                    <description
+                    >Whether to apply random sorting on initial load. If not, the load order of the data source is used.</description>
+                </property>
+                <property key="randomizeObjectsAttribute" type="attribute" required="false">
+                    <caption>&#160;</caption>
+                    <description
+                    >Whether to apply random sorting on initial load. If not, the load order of the data source is used.</description>
+                    <attributeTypes>
+                        <attributeType name="Boolean" />
+                    </attributeTypes>
+                </property>
+                <property key="randomizeObjectsExpression" type="expression" required="false">
+                    <caption>&#160;</caption>
+                    <description
+                    >Whether to apply random sorting on initial load. If not, the load order of the data source is used.</description>
+                    <returnType type="Boolean" />
+                </property>
+            </propertyGroup>
+        </propertyGroup>
+    </properties>
+</widget>

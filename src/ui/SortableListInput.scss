@@ -1,0 +1,94 @@
+.sortable-list-input {
+    flex-direction: column;
+    list-style: none;
+    flex: 1;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+    user-select: none;
+
+    &.form-control {
+        grid-gap: 1px;
+        background-color: #e7e7e9;
+        padding: 0px; // Enforce zero padding
+    }
+
+    .sortable-list-input-item {
+        display: flex;
+        flex-direction: row;
+        padding: 8px;
+        cursor: inherit;
+        will-change: transform;
+
+        &.is-dragging {
+            z-index: 1;
+            touch-action: manipulation;
+        }
+
+        .drag-handle {
+            border: none;
+            background: none;
+            box-shadow: none;
+            margin-right: 8px;
+            border-radius: 2px;
+            touch-action: none; // Disable scrolling on sortable list items
+
+            &:focus {
+                outline: 5px auto -webkit-focus-ring-color; // Following Atlas Core legacy bootstrap focus style
+            }
+        }
+
+        &:hover {
+            .drag-handle {
+                background-color: #f9f9f9;
+            }
+        }
+
+        .sortable-list-input-item-content {
+            flex: 1;
+        }
+    }
+
+    // Transfer disabled color to the list item to make the grid gap visible
+    &.form-control[disabled] {
+        background-color: #e7e7e9;
+
+        .sortable-list-input-item {
+            background-color: #f8f8f8;
+        }
+    }
+
+    &:not([disabled]) {
+        .sortable-list-input-item {
+            background-color: #fff;
+        }
+
+        // Both item and handle - overwrite button style
+        &.item-interaction {
+            .sortable-list-input-item,
+            .drag-handle {
+                cursor: grab;
+
+                &.is-dragging,
+                &.is-dragging .drag-handle {
+                    cursor: grabbing;
+                }
+            }
+        }
+
+        // Only handle
+        &.handle-interaction {
+            .sortable-list-input-item {
+                .drag-handle {
+                    cursor: grab;
+                }
+
+                &.is-dragging {
+                    .drag-handle {
+                        cursor: grabbing;
+                    }
+                }
+            }
+        }
+    }
+}

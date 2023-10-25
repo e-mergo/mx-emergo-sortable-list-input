@@ -1,0 +1,44 @@
+{
+    "name": "sortablelistinput",
+    "widgetName": "SortableListInput",
+    "version": "1.0.0",
+    "description": "My widget description",
+    "author": "E-mergo, Laurens Offereins",
+    "engines": {
+        "node": ">=16"
+    },
+    "license": "MIT",
+    "config": {
+        "projectPath": "../../Intermediate",
+        "mendixHost": "http://localhost:8080",
+        "developmentPort": 3000
+    },
+    "packagePath": "emergo",
+    "scripts": {
+        "start": "pluggable-widgets-tools start:server",
+        "dev": "pluggable-widgets-tools start:web",
+        "build": "pluggable-widgets-tools build:web",
+        "lint": "pluggable-widgets-tools lint",
+        "lint:fix": "pluggable-widgets-tools lint:fix",
+        "prerelease": "npm run lint",
+        "release": "pluggable-widgets-tools release:web"
+    },
+    "devDependencies": {
+        "@mendix/pluggable-widgets-tools": "^10.0.0"
+    },
+    "dependencies": {
+        "@dnd-kit/modifiers": "^6.0.1",
+        "@dnd-kit/sortable": "^7.0.2",
+        "array-move": "^4.0.0",
+        "classnames": "^2.3.2",
+        "shuffle-array": "^1.0.1"
+    },
+    "resolutions": {
+        "react": "18.2.0",
+        "react-native": "0.70.7"
+    },
+    "overrides": {
+        "react": "18.2.0",
+        "react-native": "0.70.7"
+    }
+}
