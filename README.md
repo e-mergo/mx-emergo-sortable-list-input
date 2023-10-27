@@ -88,6 +88,6 @@ the availability of E-mergo developers your request may be considered and includ
 
 ## Changelog
 
-#### 1.0.0 - 20231025 - Mendix 9.24.3
+#### 1.0.0 - 20231027 - Mendix 9.24.3
 
 Initial release.
