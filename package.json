@@ -9,7 +9,7 @@
     },
     "license": "MIT",
     "config": {
-        "projectPath": "../../Intermediate",
+        "projectPath": "../../<ProjectFolder>",
         "mendixHost": "http://localhost:8080",
         "developmentPort": 3000
     },
