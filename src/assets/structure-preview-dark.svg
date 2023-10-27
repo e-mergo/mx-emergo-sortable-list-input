@@ -1,0 +1,42 @@
+<svg width="246" height="57" xmlns="http://www.w3.org/2000/svg">
+    <rect fill="none" width="246" height="57" id="svg_1" rx="4" stroke="#999" />
+    <line id="svg_5" y2="29" x2="246" y1="29" x1="0" stroke="#999" fill="none" />
+    <g stroke="null" id="item_1">
+        <g stroke="null" id="svg_2">
+            <circle r="1" cy="11.83333" cx="11" fill="#999" />
+            <circle r="1" cy="11.83333" cx="14" fill="#999" />
+            <circle r="1" cy="17.83333" cx="11" fill="#999" />
+            <circle r="1" cy="17.83333" cx="14" fill="#999" />
+        </g>
+        <text
+            xml:space="preserve"
+            text-anchor="start"
+            font-family="'Roboto Mono'"
+            font-size="10"
+            stroke-width="0"
+            id="svg_3"
+            y="18"
+            x="25.498"
+            fill="#999"
+        >Sortable item A</text>
+    </g>
+    <g stroke="null" id="item_2">
+        <g stroke="null" id="svg_4">
+            <circle r="1" cy="40" cx="11" fill="#999" />
+            <circle r="1" cy="40" cx="14" fill="#999" />
+            <circle r="1" cy="46" cx="11" fill="#999" />
+            <circle r="1" cy="46" cx="14" fill="#999" />
+        </g>
+        <text
+            xml:space="preserve"
+            text-anchor="start"
+            font-family="'Roboto Mono'"
+            font-size="10"
+            stroke-width="0"
+            id="svg_5"
+            y="47"
+            x="25.498"
+            fill="#999"
+        >Sortable item B</text>
+    </g>
+</svg>

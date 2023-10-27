@@ -1,4 +1,6 @@
 import { hidePropertiesIn } from "@mendix/pluggable-widgets-tools";
+import StructurePreviewSvg from "./assets/structure-preview.svg";
+import StructurePreviewSvgDark from "./assets/structure-preview-dark.svg";
 
 // Define conditional properties for randomizeObjectsType
 const keysToHideByRandomizeObjectsType = {
@@ -10,10 +12,10 @@ const keysToHideByRandomizeObjectsType = {
 /**
  * Control visibility of properties in Studio Pro
  *
- * @param {object} values
+ * @param {Object}     values
  * @param {Properties} defaultProperties
- * @param {("web"|"desktop")} target
- * @returns {Properties}
+ * @param {String}     target
+ * @returns {Properties} Widget properties
  */
 export function getProperties(values, defaultProperties, target) {
     // Conditional properties
@@ -22,45 +24,32 @@ export function getProperties(values, defaultProperties, target) {
     return defaultProperties;
 }
 
-// /**
-//  * @param {Object} values
-//  * @returns {Problem[]} returns a list of problems.
-//  */
-// export function check(values) {
-//    /** @type {Problem[]} */
-//    const errors = [];
-//    // Add errors to the above array to throw errors in Studio and Studio Pro.
-//    /* Example
-//    if (values.myProperty !== "custom") {
-//        errors.push({
-//            property: `myProperty`,
-//            message: `The value of 'myProperty' is different of 'custom'.`,
-//            url: "https://github.com/myrepo/mywidget"
-//        });
-//    }
-//    */
-//    return errors;
-// }
+/**
+ * Return the widget appearance definition
+ *
+ * @param {Object}  values
+ * @param {Boolean} isDarkMode
+ * @param {Array}   version
+ * @returns {Object} Preview definition
+ */
+export function getPreview(values, isDarkMode, version) {
+    // return {
+    //     type: "Image",
+    //     document: decodeURIComponent(
+    //         (isDarkMode ? StructurePreviewSvgDark : StructurePreviewSvg).replace("data:image/svg+xml,", "")
+    //     ),
+    //     height: 57,
+    //     width: 250
+    // };
+}
 
-// /**
-//  * @param {object} values
-//  * @param {boolean} isDarkMode
-//  * @param {number[]} version
-//  * @returns {object}
-//  */
-// export function getPreview(values, isDarkMode, version) {
-//     // Customize your pluggable widget appearance for Studio Pro.
-//     return {
-//         type: "Container",
-//         children: []
-//     };
-// }
-
-// /**
-//  * @param {Object} values
-//  * @param {("web"|"desktop")} platform
-//  * @returns {string}
-//  */
-// export function getCustomCaption(values, platform) {
-//     return "SortableListInput";
-// }
+/**
+ * Return the custom widget caption
+ *
+ * @param {Object} values
+ * @param {String} platform
+ * @returns {String} Custom caption
+ */
+export function getCustomCaption(values, platform) {
+    return "Sortable List";
+}

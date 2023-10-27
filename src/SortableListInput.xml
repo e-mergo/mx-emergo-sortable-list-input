@@ -9,7 +9,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd"
 >
-    <name>Sortable List Input</name>
+    <name>Sortable List</name>
     <description>Mendix custom widget for using an input field that enables sorting values.</description>
     <studioProCategory>Input elements</studioProCategory>
     <icon />
