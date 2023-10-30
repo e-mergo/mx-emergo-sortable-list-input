@@ -49,7 +49,8 @@ Follow these steps to add the widget to your Mendix project:
 1. Download the Widget from the Mendix Marketplace in Studio Pro.
 2. Insert the Widget in a page.
 3. Configure the Widget. The Value attribute and Sortable objects are required.
-4. Run the app, interact with the sortable list to see the info tooltip.
+4. Run the app and interact with the sortable list.
+5. Perhaps setup microflow handling of the value attribute to parse the sorted values.
 
 ## Styling
 
