@@ -16,7 +16,7 @@ Below is a detailed description of the available features of this widget.
 
 ### Value attribute
 
-Set the attribute which will hold the result of the sorted list. The result will be stored in a string attribute, concatenating the corresponding values, using the separator parameter as glue. As an example, an alphabetically sorted list of A trough D will be stored in the attribute as 'A/B/C/D'.
+Set the attribute which will hold the result of the sorted list. The result will be stored in a string attribute, concatenating the corresponding values, using the separator parameter as glue. As an example, an alphabetically sorted list of A through D will be stored in the attribute as 'A/B/C/D'.
 
 ### Separator
 
