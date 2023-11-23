@@ -1,7 +1,7 @@
 {
     "name": "sortablelistinput",
     "widgetName": "SortableListInput",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Mendix custom widget for using an input field that enables sorting values.",
     "author": "E-mergo, Laurens Offereins",
     "engines": {
