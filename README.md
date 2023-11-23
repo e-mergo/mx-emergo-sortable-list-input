@@ -2,7 +2,7 @@
 
 Mendix custom widget for using an input field that enables sorting values
 
-**Sortable List Input** is a Mendix widget created by [E-mergo](https://www.e-mergo.nl). Use this widget to include a field as a sortable list input in your form in Mendix. The field will provide a list of labels that can be vertically sorted by the user. The result of the sorted list will be stored in the selected attribute, like any other input widget. The widget uses the [Dnd Kit library](https://dndkit.com/) for creating the interactive sortable list, which supports keyboard interaction.
+**Sortable List Input** is a Mendix widget created by [E-mergo](https://www.e-mergo.nl). Use this widget to include a field as a sortable list input in your form in Mendix. The field will provide a list of labels that can be vertically sorted by the user. The result of the sorted list will be stored in the selected attribute, like any other input widget. The widget uses the [Dnd Kit library](https://dndkit.com/) for creating the interactive sortable list, which supports keyboard interaction. The widget supports RTL layouts.
 
 This widget is [hosted on GitHub](https://github.com/e-mergo/mx-emergo-sortable-list-input). You can report bugs and discuss features on the [issues page](https://github.com/e-mergo/mx-emergo-sortable-list-input/issues).
 
@@ -72,6 +72,11 @@ E-mergo provides paid support through standard support contracts. For other scen
 Requests for additional features can be posted in the widget's GitHub repository. Depending on your own code samples and the availability of E-mergo developers your request may be considered and included.
 
 ## Changelog
+
+#### 1.0.1 - 20231123
+
+-   Fixed styling for RTL layouts.
+-   Fixed documentation.
 
 #### 1.0.0 - 20231027 - Mendix 9.24.3
 
