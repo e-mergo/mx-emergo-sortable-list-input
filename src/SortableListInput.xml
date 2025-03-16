@@ -87,10 +87,18 @@
                     <caption>Label content</caption>
                     <description />
                 </property>
+                <property key="sortType" type="enumeration" defaultValue="sortValue">
+                    <caption>Key type</caption>
+                    <description />
+                    <enumerationValues>
+                        <enumerationValue key="sortValue">Attribute</enumerationValue>
+                        <enumerationValue key="sortExpression">Expression</enumerationValue>
+                    </enumerationValues>
+                </property>
                 <property key="sortValue" dataSource="dataSource" type="attribute" required="false">
-                    <caption>Value attribute</caption>
+                    <caption>Key attribute</caption>
                     <description
-                    >The value of the sortable items that will be saved in the sorted list. Defaults to the 'Label attribute'.</description>
+                    >The key or value of the sortable items that will be stored in the sorted list. Defaults to the 'Label attribute' or 'Label expression' when empty.</description>
                     <attributeTypes>
                         <attributeType name="String" />
                         <attributeType name="AutoNumber" />
@@ -99,6 +107,12 @@
                         <attributeType name="Integer" />
                         <attributeType name="Long" />
                     </attributeTypes>
+                </property>
+                <property key="sortExpression" dataSource="dataSource" type="expression">
+                    <caption>Key expression</caption>
+                    <description
+                    >The key or value of the sortable items that will be stored in the sorted list. Defaults to the 'Label attribute' or 'Label expression' when empty.</description>
+                    <returnType type="String" />
                 </property>
                 <property key="randomizeObjectsType" type="enumeration" defaultValue="static">
                     <caption>Randomize objects</caption>

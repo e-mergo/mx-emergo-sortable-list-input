@@ -23,10 +23,11 @@ import "./ui/SortableListInput.scss";
  * @param {String}  options.listSeparator              Character for separting the stored values.
  * @param {String}  options.handleType                 Type of interaction with or without drag handle.
  * @param {Object}  options.dataSource                 Data source details for sortable objects.
- * @param {Object}  options.displayValue               Attribute handler for label attritbute.
- * @param {Object}  options.displayExpression          Widget attribute for label expression.
+ * @param {Object}  options.displayValue               Attribute handler for label attribute.
+ * @param {Object}  options.displayExpression          Widget label expression attribute.
  * @param {Object}  options.displayContent             Content handler for label content.
  * @param {Object}  options.sortValue                  Attribute handler for key attribute.
+ * @param {Object}  options.sortExpression             Widget key expression attribute.
  * @param {String}  options.randomizeObjectsType       Type of sortable object randomization.
  * @param {Boolean} options.randomizeObjectsStatic     Static sortable object randomization.
  * @param {Object}  options.randomizeObjectsAttribute  Attribute sortable object randomization.
@@ -45,6 +46,7 @@ export function SortableListInput({
     displayExpression,
     displayContent,
     sortValue,
+    sortExpression,
     randomizeObjectsType,
     randomizeObjectsStatic,
     randomizeObjectsAttribute,
@@ -148,7 +150,7 @@ export function SortableListInput({
         initialList = dataSource.items.map(i => {
             // Get label and key from attributes
             const label = displayValue?.get(i).displayValue || displayExpression?.get(i).value || "";
-            const key = sortValue?.get(i).displayValue || label;
+            const key = sortValue?.get(i).displayValue || sortExpression?.get(i).value || label;
 
             return {
                 id: key,

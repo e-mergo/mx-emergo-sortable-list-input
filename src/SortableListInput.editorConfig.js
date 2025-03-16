@@ -28,6 +28,13 @@ export function getProperties(values, defaultProperties, target) {
         ["displayValue", "displayExpression", "displayContent"].filter(i => i !== values.displayType)
     );
 
+    // Sort type
+    hidePropertiesIn(
+        defaultProperties,
+        values,
+        ["sortValue", "sortExpression"].filter(i => i !== values.sortType)
+    );
+
     return defaultProperties;
 }
 
