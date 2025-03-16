@@ -62,12 +62,30 @@
                     <caption>Data source</caption>
                     <description />
                 </property>
+                <property key="displayType" type="enumeration" defaultValue="displayValue">
+                    <caption>Label type</caption>
+                    <description />
+                    <enumerationValues>
+                        <enumerationValue key="displayValue">Attribute</enumerationValue>
+                        <enumerationValue key="displayExpression">Expression</enumerationValue>
+                        <enumerationValue key="displayContent">Content</enumerationValue>
+                    </enumerationValues>
+                </property>
                 <property key="displayValue" dataSource="dataSource" type="attribute">
                     <caption>Label attribute</caption>
                     <description />
                     <attributeTypes>
                         <attributeType name="String" />
                     </attributeTypes>
+                </property>
+                <property key="displayExpression" dataSource="dataSource" type="expression">
+                    <caption>Label expression</caption>
+                    <description />
+                    <returnType type="String" />
+                </property>
+                <property key="displayContent" dataSource="dataSource" type="widgets">
+                    <caption>Label content</caption>
+                    <description />
                 </property>
                 <property key="sortValue" dataSource="dataSource" type="attribute" required="false">
                     <caption>Value attribute</caption>

@@ -21,6 +21,13 @@ export function getProperties(values, defaultProperties, target) {
     // Conditional properties
     hidePropertiesIn(defaultProperties, values, [...keysToHideByRandomizeObjectsType[values.randomizeObjectsType]]);
 
+    // Display type
+    hidePropertiesIn(
+        defaultProperties,
+        values,
+        ["displayValue", "displayExpression", "displayContent"].filter(i => i !== values.displayType)
+    );
+
     return defaultProperties;
 }
 

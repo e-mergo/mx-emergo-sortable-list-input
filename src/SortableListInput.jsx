@@ -24,6 +24,8 @@ import "./ui/SortableListInput.scss";
  * @param {String}  options.handleType                 Type of interaction with or without drag handle.
  * @param {Object}  options.dataSource                 Data source details for sortable objects.
  * @param {Object}  options.displayValue               Attribute handler for label attritbute.
+ * @param {Object}  options.displayExpression          Widget attribute for label expression.
+ * @param {Object}  options.displayContent             Content handler for label content.
  * @param {Object}  options.sortValue                  Attribute handler for key attribute.
  * @param {String}  options.randomizeObjectsType       Type of sortable object randomization.
  * @param {Boolean} options.randomizeObjectsStatic     Static sortable object randomization.
@@ -40,6 +42,8 @@ export function SortableListInput({
     handleType,
     dataSource,
     displayValue,
+    displayExpression,
+    displayContent,
     sortValue,
     randomizeObjectsType,
     randomizeObjectsStatic,
@@ -143,14 +147,15 @@ export function SortableListInput({
         // Create initial list
         initialList = dataSource.items.map(i => {
             // Get label and key from attributes
-            const label = displayValue.get(i).displayValue;
-            const key = sortValue ? sortValue.get(i).displayValue : label;
+            const label = displayValue?.get(i).displayValue || displayExpression?.get(i).value || "";
+            const key = sortValue?.get(i).displayValue || label;
 
             return {
-                id: label, // Use label for unique identifier
+                id: key,
                 data: {
                     label: label,
-                    key: key
+                    key: key,
+                    content: displayContent?.get(i)
                 }
             };
         });
@@ -193,8 +198,8 @@ export function SortableListInput({
                 tabIndex={disabled ? -1 : tabIndex}
             >
                 <SortableContext items={list} strategy={verticalListSortingStrategy}>
-                    {list.map(({ id, data }, index) => (
-                        <SortableItem key={id} id={id} data={data} disabled={disabled} handleType={handleType} />
+                    {list.map((props, index) => (
+                        <SortableItem key={props.id} disabled={disabled} handleType={handleType} {...props} />
                     ))}
                 </SortableContext>
             </ul>
