@@ -1,4 +1,4 @@
-import { createElement, useState } from "react";
+import { createElement, useEffect, useState } from "react";
 import { closestCenter, DndContext, KeyboardSensor, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
 import {
     arrayMove,
@@ -136,18 +136,15 @@ export function SortableListInput({
         }
     }
 
-    // Bail when the datasource is not available
-    if (!isDataSourceAvailable) {
-        return null;
-    }
+    // Setup list on
+    useEffect(() => {
+        // Bail when the datasource is not available
+        if (!isDataSourceAvailable) {
+            return;
+        }
 
-    // Define the initial list
-    let initialList;
-
-    // When doing the initial load
-    if (!list.length && isDataSourceAvailable && dataSource.items.length) {
-        // Create initial list
-        initialList = dataSource.items.map(i => {
+        // Create list items
+        let aList = dataSource.items.map(i => {
             // Get label and key from attributes
             const label = displayValue?.get(i).displayValue || displayExpression?.get(i).value || "";
             const key = sortValue?.get(i).displayValue || sortExpression?.get(i).value || label;
@@ -162,26 +159,36 @@ export function SortableListInput({
             };
         });
 
-        // Sort according to stored list
+        // Adhere to registered sorting
         if (valueAttribute.displayValue) {
-            // Get chunks from string
-            valueAttribute.displayValue.split(separator).forEach((item, index) => {
-                // Move each item to their index
-                initialList = arrayMove(
-                    initialList,
-                    initialList.findIndex(i => i.data.key === item),
-                    index
-                );
+            valueAttribute.displayValue.split(separator).forEach((item, newIndex) => {
+                const currIndex = aList.findIndex(i => i.data.key === item);
+
+                // When found, move each item to their new index
+                if (-1 !== currIndex) {
+                    aList = arrayMove(aList, currIndex, newIndex);
+                }
             });
 
-            // Maybe randomize
+            // Or maybe set initial randomization
         } else if (randomizeObjects) {
-            shuffle(initialList);
+            shuffle(aList);
         }
 
-        // Set the initial list
-        setList(initialList);
-    }
+        // Update the list
+        setList(aList);
+    }, [
+        isDataSourceAvailable,
+        dataSource.items,
+        valueAttribute.displayValue,
+        randomizeObjects,
+        displayValue,
+        displayExpression,
+        displayContent,
+        sortValue,
+        sortExpression,
+        separator
+    ]);
 
     return (
         <DndContext
