@@ -58,7 +58,11 @@ export function SortableItem({ id, data, disabled, handleType }) {
                     ::
                 </button>
             )}
-            {data.content || <span className="sortable-list-input-item-content">{data.label}</span>}
+            {data.content ? (
+                <div className="sortable-list-input-item-content">{data.content}</div>
+            ) : (
+                <span className="sortable-list-input-item-content">{data.label}</span>
+            )}
         </li>
     );
 }
