@@ -36,7 +36,7 @@ Set the action to trigger when the input value is changed.
 
 ### Sortable objects
 
-Set the items for the sortable list. Choose from any data source type that returns an entity. Set the Label attribute as the entity's attribute that will be used for the display label of the sortable items. Optionally set the Value attribute to use a different entity attribute for setting up the result of the sorted list. Use this to differentiate between a label and the corresponding value (numeric or otherwise) that will be saved.
+Set the items for the sortable list. Choose from any data source type that returns an entity. Set the display label of the sortable items through either an entity's attribute, an expression or custom widget content. Set the key or value used for setting up the result of the sorted list through either an entity's attribute or an expression. Use this for differentiating between the sorted label versus the corresponding value (numeric or otherwise) that will be stored.
 
 ### Randomize objects
 
@@ -72,6 +72,12 @@ E-mergo provides paid support through standard support contracts. For other scen
 Requests for additional features can be posted in the widget's GitHub repository. Depending on your own code samples and the availability of E-mergo developers your request may be considered and included.
 
 ## Changelog
+
+#### 1.1.0 - 20250623
+
+-   Added options to set the sortable list item's labels through an expression or using widget content. Props @StevenKeersmaekers93.
+-   Added option to set the sortable list item's key or value through an expression.
+-   Changed the widget rendering to synchronize with external changes in the data source objects or the sorted list.
 
 #### 1.0.1 - 20231123
 
