@@ -12,6 +12,7 @@
     <name>Sortable List</name>
     <description>Mendix custom widget for using an input field that enables sorting values.</description>
     <studioProCategory>Input elements</studioProCategory>
+    <helpUrl>https://github.com/e-mergo/mx-emergo-sortable-list-input/blob/main/README.md</helpUrl>
     <icon />
     <properties>
         <propertyGroup caption="General">
