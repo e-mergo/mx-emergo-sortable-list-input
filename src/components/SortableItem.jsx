@@ -37,7 +37,7 @@ export function SortableItem({ id, data, disabled, handleType }) {
     return (
         <li
             ref={setNodeRef}
-            className={classNames("sortable-list-input-item", {
+            className={classNames("sortable-list-input-item", data.className, {
                 "is-sorting": isSorting,
                 "is-dragging": isDragging
             })}

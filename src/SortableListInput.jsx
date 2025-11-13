@@ -28,6 +28,7 @@ import "./ui/SortableListInput.scss";
  * @param {Object}  options.displayContent             Content handler for label content.
  * @param {Object}  options.sortValue                  Attribute handler for key attribute.
  * @param {Object}  options.sortExpression             Widget key expression attribute.
+ * @param {Object}  options.itemClassName              List item class expression attribute.
  * @param {String}  options.randomizeObjectsType       Type of sortable object randomization.
  * @param {Boolean} options.randomizeObjectsStatic     Static sortable object randomization.
  * @param {Object}  options.randomizeObjectsAttribute  Attribute sortable object randomization.
@@ -47,6 +48,7 @@ export function SortableListInput({
     displayContent,
     sortValue,
     sortExpression,
+    itemClassName,
     randomizeObjectsType,
     randomizeObjectsStatic,
     randomizeObjectsAttribute,
@@ -154,6 +156,7 @@ export function SortableListInput({
                 data: {
                     label: label,
                     key: key,
+                    className: itemClassName?.get(i)?.value,
                     content: displayContent?.get(i)
                 }
             };

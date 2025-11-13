@@ -143,6 +143,11 @@
                     >Whether to apply random sorting on initial load. If not, the load order of the data source is used.</description>
                     <returnType type="Boolean" />
                 </property>
+                <property key="itemClassName" dataSource="dataSource" type="expression" required="false">
+                    <caption>Class</caption>
+                    <description />
+                    <returnType type="String" />
+                </property>
             </propertyGroup>
         </propertyGroup>
     </properties>
