@@ -20,7 +20,7 @@ Set the attribute which will hold the result of the sorted list. The result will
 
 ### Separator
 
-Set the character used for separating the sorted list values.
+Set the character(s) used for separating the sorted list values.
 
 ### Sorting handle
 
@@ -41,6 +41,10 @@ Set the items for the sortable list. Choose from any data source type that retur
 ### Randomize objects
 
 Set whether the initial load of the sortable list items should be randomized.
+
+### List item class
+
+Set the expression for the list item class name.
 
 ## Usage
 
@@ -72,6 +76,11 @@ E-mergo provides paid support through standard support contracts. For other scen
 Requests for additional features can be posted in the widget's GitHub repository. Depending on your own code samples and the availability of E-mergo developers your request may be considered and included.
 
 ## Changelog
+
+#### 1.2.0 - 20260114
+
+-   Added the _List item class_ attribute for the list item class name.
+-   Changed the _List separator_ attribute to an expression. This change requires updating the definition in each widget.
 
 #### 1.1.0 - 20250623
 
