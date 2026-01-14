@@ -145,7 +145,7 @@
                     <returnType type="Boolean" />
                 </property>
                 <property key="itemClassName" dataSource="dataSource" type="expression" required="false">
-                    <caption>Class</caption>
+                    <caption>List item class</caption>
                     <description />
                     <returnType type="String" />
                 </property>
