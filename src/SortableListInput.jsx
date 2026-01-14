@@ -64,7 +64,7 @@ export function SortableListInput({
     const [randomizeObjects, setRandomizeObjects] = useState(null);
 
     // Define the list separator
-    const separator = listSeparator || "/";
+    const separator = listSeparator?.value || "/";
 
     // Define the disabled attribute
     const disabled = valueAttribute.readOnly;
@@ -141,9 +141,7 @@ export function SortableListInput({
     // Setup list on
     useEffect(() => {
         // Bail when the datasource is not available
-        if (!isDataSourceAvailable) {
-            return;
-        }
+        if (!isDataSourceAvailable) return;
 
         // Create list items
         let aList = dataSource.items.map(i => {
@@ -183,6 +181,7 @@ export function SortableListInput({
     }, [
         isDataSourceAvailable,
         dataSource.items,
+        itemClassName,
         valueAttribute.displayValue,
         randomizeObjects,
         displayValue,

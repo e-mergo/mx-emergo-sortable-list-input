@@ -24,10 +24,11 @@
                         <attributeType name="String" />
                     </attributeTypes>
                 </property>
-                <property key="listSeparator" type="string" defaultValue="/">
+                <property key="listSeparator" type="expression" defaultValue="'/'">
                     <caption>List separator</caption>
                     <description
-                    >The character used for separating the sorted list values. Defaults to '/'.</description>
+                    >Character(s) used for separating the sorted list values. Defaults to / when empty.</description>
+                    <returnType type="String" />
                 </property>
             </propertyGroup>
             <propertyGroup caption="Interaction">
